@@ -1,19 +1,28 @@
 class Tweet {
-  constructor(username, tweetText, tweetLink, numberOfLikes) {
-    this.sender = username;
-    this.content = tweetText;
-    this.link = tweetLink || 'no link provided';
+  constructor(handle, tweet, link) {
+    this.sender = handle;
+    this.content = tweet;
+    this.link = link || 'no link provided';
     this.retweets = 0;
     this.replies = [];
     this.replyCount = 0;
-    this.likes = 0 || numberOfLikes;
+    this.likes = 0;
   }
 
-  addNumberOfLikes(){
- if (numberOfLikes > 0) {
-   return numberOfLikes;
- }
+  like() {
+    this.likes++;
+  }
+
+  retweet() {
+    this.retweets++;
+  }
+
+  reply(newReply) {
+    this.replies.push(newReply);
+    return this.replies.length;
+  }
+
 }
-}
+
 
 module.exports = Tweet;

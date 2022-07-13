@@ -88,7 +88,7 @@ describe('Tweet', function() {
     assert.equal(tweet.likes, 5);
   });
 
-  it.skip('can be retweeted', function() {
+  it('can be retweeted', function() {
     var tweet = new Tweet('@jwanliu', 'something amazing');
 
     assert.equal(tweet.retweets, 0);
@@ -96,14 +96,14 @@ describe('Tweet', function() {
     assert.equal(tweet.retweets, 1);
   });
 
-  it.skip('can be replied to, and keep track of its replies', function() {
+  it('can be replied to, and keep track of its replies', function() {
     var tweet = new Tweet('@maxcell', 'something wonderful');
 
     tweet.reply('great tweet');
     assert.deepEqual(tweet.replies, ['great tweet']);
   });
 
-  it.skip('can be replied to many time', function() {
+  it('can be replied to many time', function() {
     var tweet = new Tweet('@maxcell', 'something wonderful');
 
     tweet.reply('great tweet');
@@ -115,7 +115,7 @@ describe('Tweet', function() {
     assert.deepEqual(tweet.replies, expected);
   });
 
-  it.skip('can count how many replies it has', function() {
+  it('can count how many replies it has', function() {
     var tweet = new Tweet('@maxcell', 'something wonderful');
 
     tweet.reply('great tweet');
